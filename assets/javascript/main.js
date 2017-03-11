@@ -1,5 +1,5 @@
 
-var PRIV_KEY = "e6abd0558c8f951d1017bdab251fc8c672e6c845";
+/*var PRIV_KEY = "e6abd0558c8f951d1017bdab251fc8c672e6c845";
 var PUBLIC_KEY = "31f470f4364dd518ad52e9fe9902ae7e";
 
 var ts = new Date().getTime();
@@ -15,7 +15,7 @@ $.ajax  ({
 // sort of a long dump you will need to sort through
   console.log(data);
 });
-
+*/
 
 //Map stuff below.
 
@@ -26,7 +26,7 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 11
       });
-  var infoWindow /*= new google.maps.InfoWindow({map: map})*/;
+  /*var infoWindow*/ /*= new google.maps.InfoWindow({map: map})*/;
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -68,14 +68,16 @@ function initMap() {
       });
     }
 
+    var infowindow;
+
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
+      infowindow.setContent(results.place.name);
       /*infowindow.setContent(results.formatted_address);*/
       infowindow.open(map, this);
     });
 
     $(document).on("click", marker, function(){
-      infowindow.setContent(place.name);
+      infowindow.setContent(results.place.name);
       infowindow.open(map, this);
     });
   }
